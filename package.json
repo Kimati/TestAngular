@@ -6,33 +6,52 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "jest --coverage --verbose --runInBand",
+    "test:watch": "jest --watch",
+    "test:ci": "jest --runInBand"
   },
   "private": true,
   "dependencies": {
     "@angular/animations": "^14.2.0",
+    "@angular/cdk": "^14.2.6",
     "@angular/common": "^14.2.0",
     "@angular/compiler": "^14.2.0",
     "@angular/core": "^14.2.0",
     "@angular/forms": "^14.2.0",
+    "@angular/google-maps": "^14.2.0",
+    "@angular/material": "^14.2.6",
     "@angular/platform-browser": "^14.2.0",
     "@angular/platform-browser-dynamic": "^14.2.0",
     "@angular/router": "^14.2.0",
+    "@azure/msal-angular": "^2.4.6",
+    "@azure/msal-browser": "^2.31.0",
+    "@babel/preset-typescript": "^7.21.0",
+    "@types/google-maps": "^3.2.3",
+    "@types/yargs": "^17.0.22",
+    "fm.liveswitch": "^1.17.3-25397",
+    "jest-auto-spies": "^1.6.10",
+    "ng-img-magnifier": "^1.2.1",
+    "ng2-canvas-whiteboard": "^4.0.2",
+    "ngx-device-detector": "^5.0.1",
     "rxjs": "~7.5.0",
+    "ts-jest": "^29.0.5",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^14.2.5",
-    "@angular/cli": "~14.2.5",
+    "@angular/cli": "13.2.5",
     "@angular/compiler-cli": "^14.2.0",
-    "@types/jasmine": "~4.0.0",
-    "jasmine-core": "~4.3.0",
-    "karma": "~6.4.0",
-    "karma-chrome-launcher": "~3.1.0",
-    "karma-coverage": "~2.2.0",
-    "karma-jasmine": "~5.1.0",
-    "karma-jasmine-html-reporter": "~2.0.0",
+    "@types/jest": "^29.5.0",
+    "jest": "^29.5.0",
+    "jest-preset-angular": "^13.0.0",
     "typescript": "~4.7.2"
+  },
+  "jest": {
+    "preset": "jest-preset-angular",
+    "setupFilesAfterEnv": [
+      "<rootDir>/src/setupJest.ts"
+    ],
+    "globalSetup": "jest-preset-angular/global-setup"
   }
 }

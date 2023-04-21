@@ -1,0 +1,50 @@
+
+<div class="container">
+
+    <!-- <table mat-table [dataSource]="myDataArray">  
+       
+    </table> -->
+
+    <mat-table #table [dataSource]="telemetriesData" matSort>
+
+        <ng-container matColumnDef="telemetryId">
+          <mat-header-cell *matHeaderCellDef mat-sort-header> telemetryId</mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.telemetryId}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="companyId">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> companyId</mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.companyId}}</mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="assetId">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> assetId</mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.assetId}}</mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="assetType">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> assetType</mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.assetType}}</mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="dateCreated">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> dateCreated</mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.dateCreated}}</mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="timeSeriesKey">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> timeSeriesKey</mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.timeSeriesKey}}</mat-cell>
+          </ng-container>
+
+        <!-- <ng-container matColumnDef="address">
+            <th mat-header-cell *matHeaderCellDef> Address </th>
+            <td mat-cell *matCellDef="let element"> {{element.address}} </td>
+          </ng-container> -->
+      
+        <mat-header-row *matHeaderRowDef="tableColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: tableColumns;"></mat-row>
+
+      </mat-table>
+
+</div>
