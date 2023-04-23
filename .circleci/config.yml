@@ -1,0 +1,32 @@
+#circleci version
+version: 2.1
+
+jobs:
+  # Job one with a unique name
+  say_hello:
+    #Execution env't
+    docker:
+      - image: cimg/base:2022.05cimg/base:2022.05
+        auth:
+          username: "kimati"
+          password: "Zyl3r@Dock3r"
+    steps:
+      - run: echo "Hello, this circleci config file was configured by Ezra"
+
+  #Job 2
+  build:
+    docker:
+      - image: cimg/base:2022.05
+        auth:
+         username: "kimati"
+         password: "Zyl3r@Dock3r"
+    steps:
+      - run: echo "building the app now...."
+
+workflows:
+  #Workflow name
+  sayHelloAndBuild:
+    #List of jobs that will run
+    jobs:
+      - say_hello
+      - build
