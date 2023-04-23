@@ -6,7 +6,7 @@ jobs:
   say_hello:
     #Execution env't
     docker:
-      - image: cimg/base:2022.05cimg
+      - image: cimg/base:2022.05
         auth:
           username: "kimati"
           password: "Zyl3r@Dock3r"
